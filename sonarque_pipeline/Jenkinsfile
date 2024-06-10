@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         // Define environment variables
-        DOCKER_IMAGE = 'your-django-app:latest'
+        DOCKER_IMAGE = 'promtehtues:latest'
         SONARQUBE_SCANNER_HOME = tool 'sonarqube_tool'
     }
 
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     // Run SonarQube scan
-                    withSonarQubeEnv('SonarQube') {
+                    withSonarQubeEnv('sonarqube_tool') {
                         sh """
                         ${env.SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
                         -Dsonar.projectKey=${SONARQUBE_PROJECT_KEY} \
