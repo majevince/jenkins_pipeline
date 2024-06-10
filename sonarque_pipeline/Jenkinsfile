@@ -18,9 +18,9 @@ pipeline {
         stage('SonarQube Analysis') {
             environment {
                 // SonarQube environment variables
-                SONARQUBE_URL = 'http://your-sonarqube-server'
-                SONARQUBE_PROJECT_KEY = 'your-project-key'
-                SONARQUBE_LOGIN = credentials('sonarqube-token')
+                SONARQUBE_URL = 'http://192.168.56.104:9090'
+                SONARQUBE_PROJECT_KEY = 'test'
+                SONARQUBE_LOGIN = credentials('sonarque_credential')
             }
             steps {
                 script {
