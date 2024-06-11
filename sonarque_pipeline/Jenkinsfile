@@ -23,19 +23,19 @@ pipeline {
             //     SONARQUBE_LOGIN = credentials('sonarqube_token')
             }
             steps {
-                script {
-                    // Run SonarQube scan
-                    withSonarQubeEnv('sonarqube_tool') {
-                        sh """
-                        // ${env.SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
-                        -Dsonar.projectKey=${SONARQUBE_PROJECT_KEY} \
-                        -Dsonar.sources=. \
-                        -Dsonar.host.url=${SONARQUBE_URL} \
-                        -Dsonar.login=${SONARQUBE_LOGIN}
-                        """
-                    }
-                }
-            }
+            //     script {
+            //         // Run SonarQube scan
+            //         withSonarQubeEnv('sonarqube_tool') {
+            //             sh """
+            //             // ${env.SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
+            //             -Dsonar.projectKey=${SONARQUBE_PROJECT_KEY} \
+            //             -Dsonar.sources=. \
+            //             -Dsonar.host.url=${SONARQUBE_URL} \
+            //             -Dsonar.login=${SONARQUBE_LOGIN}
+            //             """
+            //         }
+            //     }
+            // }
         }
 
         stage('Build Docker Image') {
