@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         // Define environment variables
-        DOCKER_IMAGE = 'promtehtues:latest'
+        DOCKER_IMAGE = 'nginx:latest'
         SONARQUBE_SCANNER_HOME = tool 'sonarqube_tool'
     }
 
@@ -20,7 +20,7 @@ pipeline {
                 // SonarQube environment variables
                 SONARQUBE_URL = 'http://192.168.56.104:9090/'
                 SONARQUBE_PROJECT_KEY = 'test'
-                SONARQUBE_LOGIN = credentials('sonarqube_token')
+                SONARQUBE_LOGIN = credentials('sonarque_credential')
             }
             steps {
                 script {
