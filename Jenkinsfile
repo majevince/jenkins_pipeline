@@ -3,8 +3,8 @@ pipeline {
     
     environment {
         // Define environment variables
-        DOCKER_IMAGE = 'your-django-app:latest'
-        SONARQUBE_SCANNER_HOME = tool 'SonarQube Scanner'
+        DOCKER_IMAGE = 'promtehtues:latest'
+        SONARQUBE_SCANNER_HOME = tool 'sonarqube_test'
     }
 
     stages {
@@ -18,16 +18,16 @@ pipeline {
         stage('SonarQube Analysis') {
             environment {
                 // SonarQube environment variables
-                SONARQUBE_URL = 'http://192.168.56.104:9090'
+                SONARQUBE_URL = 'http://192.168.56.104:9090/'
                 SONARQUBE_PROJECT_KEY = 'test'
-                SONARQUBE_LOGIN = credentials('sonarque_credential')
+                SONARQUBE_LOGIN = credentials('sonarqube_token')
             }
             steps {
                 script {
                     // Run SonarQube scan
-                    withSonarQubeEnv('SonarQube') {
+                    withSonarQubeEnv('sonarqube_tool') {
                         sh """
-                        ${env.SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
+                        // ${env.SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
                         -Dsonar.projectKey=${SONARQUBE_PROJECT_KEY} \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=${SONARQUBE_URL} \
