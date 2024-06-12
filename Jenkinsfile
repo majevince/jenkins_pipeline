@@ -27,7 +27,7 @@ pipeline {
                 script {
                     // Run SonarQube scan
                     withSonarQubeEnv('sonarqube_test') {
-                        sh """
+                        sudo sh """
                         // ${env.SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
                         -Dsonar.projectKey=${SONARQUBE_PROJECT_KEY} \
                         -Dsonar.sources=. \
