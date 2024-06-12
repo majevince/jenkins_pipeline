@@ -20,7 +20,8 @@ pipeline {
                 // SonarQube environment variables
                 SONARQUBE_URL = 'http://192.168.56.104:9090/'
                 SONARQUBE_PROJECT_KEY = 'test'
-                SONARQUBE_LOGIN = credentials('sqp_5c271a04c75c3f2deccf70d4e5cb2f85e4f8b64e')
+                SONARQUBE_LOGIN = credentials('sonarque_credential')
+                // SONARQUBE_LOGIN = credentials('sqp_5c271a04c75c3f2deccf70d4e5cb2f85e4f8b64e')
             }
             steps {
                 script {
