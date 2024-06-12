@@ -28,7 +28,7 @@ pipeline {
                     // Run SonarQube scan
                     withSonarQubeEnv('sonarqube_test') {
                         sudo sh """
-                        // ${env.SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
+                        ${env.SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
                         -Dsonar.projectKey=${SONARQUBE_PROJECT_KEY} \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=${SONARQUBE_URL} \
