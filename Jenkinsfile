@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Define environment variables
         DOCKER_IMAGE = 'nginx:latest'
-        SONARQUBE_SCANNER_HOME = tool 'sonarqube_tool'
+        SONARQUBE_SCANNER_HOME = tool 'sonarqube_test'
     }
 
     stages {
